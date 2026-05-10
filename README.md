@@ -4,40 +4,34 @@ Google slide link ==== https://docs.google.com/presentation/d/1CkAtBVoF8MlFCuaQ_
 
 # I. Foundational Concepts
 
-## 1. Defining DAX
-Based on the tutorial, the difference between a standard Excel formula and DAX is that Excel formulas usually work on individual cells, while DAX works with tables and columns inside Power BI. DAX is more powerful for data analysis because it can create dynamic calculations that change depending on filters, slicers, and report visuals.
+### 1. DAX Basics
+DAX is different from regular Excel formulas. While Excel calculates cell by cell, DAX works with entire tables and columns in Power BI. This makes DAX better for data analysis because your calculations automatically adjust based on user selections like filters and slicers.
+
+### 2. Why Use DAX?
+Raw data alone isn't enough for most reports. You usually need calculated insights like profit, margins, averages, and rankings. DAX lets you build custom calculations that update automatically as people interact with your dashboard.
 
 ---
 
-## 2. The “Why” of DAX
-We cannot rely only on the raw numbers from the imported dataset because raw data only contains basic information. In reports, we often need more advanced calculations such as total profit, profit margin, averages, rankings, and filtered summaries. DAX fills this gap by allowing us to create custom calculations and business logic that automatically update when users interact with the dashboard.
+## II. Calculated Columns vs. Measures
+
+### 3. Storage Impact
+Calculated Columns save results for every single row, which makes your Power BI file bigger. Measures only run when you actually use them in a visual.
+
+For big datasets, this matters. Too many calculated columns slow things down and eat up memory. Measures handle large data much better.
+
+### 4. How Filter Context Works
+Measures respond to whatever filters are active. Click a region or category, and the measure recalculates instantly for just that selection.
+
+Calculated columns don't do this — they're static once created. That's why measures feel more interactive.
 
 ---
 
-# II. Calculated Columns vs. Measures
+## III. Functions & Syntax
 
-## 3. The Storage Difference
-Calculated Columns increase the file size of the Power BI model because the calculated values are stored for every row in the table. Measures do not store values for each row because they are only calculated when needed in a visual or report.
+### 5. RELATED Function
+Use RELATED when you need to pull data from a different table. But first, you must set up a relationship between those tables in Model View (usually through matching keys like ProductID).
 
-This is important for large datasets because storing many calculated rows can slow down Power BI and use more memory. Measures are more efficient for performance.
-
----
-
-## 4. Context Clues – Filter Context
-Filter Context affects a Measure because the result changes depending on the filters, slicers, or visuals selected in the dashboard.
-
-For example, if I click a specific category or region in the report, the measure recalculates and only shows the result for that selected data. This makes measures dynamic and interactive compared to calculated columns, which stay fixed after being created.
-
----
-
-# III. Function Application & Syntax
-
-## 5. The RELATED Function
-The RELATED function is used when we need to get data from another table. It helps connect information between multiple related tables in Power BI.
-
-For the RELATED function to work correctly, a relationship between the tables must first be created in the Model View. Usually, this relationship is based on matching IDs or keys such as ProductID or CustomerID.
-
-Without a relationship, Power BI will not know how the tables are connected.
+Without that relationship, Power BI won't know how to connect the data.
 
 ---
 
