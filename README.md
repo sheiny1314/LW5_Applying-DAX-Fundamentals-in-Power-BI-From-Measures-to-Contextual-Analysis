@@ -1,6 +1,6 @@
 # LW5_Applying-DAX-Fundamentals-in-Power-BI-From-Measures-to-Contextual-Analysis
 
-
+Google slide link ==== https://docs.google.com/presentation/d/1CkAtBVoF8MlFCuaQ_vWUd35rOCMpwDJsjYVq1FLM4Rk/edit?slide=id.p#slide=id.p
 
 # I. Foundational Concepts
 
